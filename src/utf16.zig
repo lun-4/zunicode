@@ -54,7 +54,7 @@ pub fn encodeRune(r: i32) Pair {
 
 // encode returns the UTF-16 encoding of the Unicode code point sequence s. It
 // is up to the caller to free the returned slice from the allocator a when done.
-pub fn encode(allocator: *mem.Allocator, s: []const i32) !ArrayUTF16 {
+pub fn encode(allocator: mem.Allocator, s: []const i32) !ArrayUTF16 {
     var n: usize = s.len;
     for (s) |v| {
         if (v >= surrSelf) {
